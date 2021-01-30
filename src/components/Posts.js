@@ -1,10 +1,12 @@
-const Posts = ({ carb, yummies }) => {
+const Posts = (props) => {
   return (
     <>
-      <h4>{carb.toUpperCase()}</h4>
-      <span>{yummies}</span>
+      <h4>{props.carb.toUpperCase()}</h4>
+      <span>{props.yummies}</span>
       <button style={editBtn}>Edit</button>
-      <button style={delBtn}>X</button>
+      <button style={delBtn} onClick={() => props.delPost(props.id)}>
+        X
+      </button>
     </>
   )
 }
