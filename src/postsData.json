@@ -1,0 +1,20 @@
+[
+  {
+    "userId": 1,
+    "id": 1,
+    "carb": "rice",
+    "yummies": "fried rice, claypot chicken rice, brown porridge, briyani"
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "carb": "noodles",
+    "yummies": "hokkien mee, prawn noodles, bak chor mee, pho"
+  },
+  {
+    "userId": 1,
+    "id": 3,
+    "carb": "bread",
+    "yummies": "french loaf, sandwich, yakun kaya toast, butter bun"
+  }
+]
