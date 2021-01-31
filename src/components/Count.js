@@ -8,7 +8,8 @@ function Count() {
 
   useEffect(() => {
     const changeCount = setInterval(() => {
-      setCount((prevCount) => prevCount + 1)
+      // setCount((prevCount) => prevCount + 1)
+      setCount(() => new Date().getTime())
     }, 1000)
     return () => clearInterval(changeCount)
   }, [])
@@ -20,6 +21,7 @@ function Count() {
   return (
     <>
       <Header />
+      <p style={timeStameStyle}>Timestamp:</p>
       <h1 style={countStyle}>
         <span style={{ color }}>{count}</span>
       </h1>
@@ -27,10 +29,15 @@ function Count() {
   )
 }
 
+const timeStameStyle = {
+  textAlign: 'center',
+  fontSize: '2.5rem',
+  marginTop: '3rem',
+  lineHeight: '1',
+}
 const countStyle = {
   textAlign: 'center',
-  fontSize: '6rem',
-  marginTop: '3rem',
+  fontSize: '4rem',
 }
 
 export default Count
