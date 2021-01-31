@@ -5,13 +5,22 @@ import posts from '../postsData.json'
 function EditPost(props) {
   const [carb, setCarb] = useState('')
   const [yummies, setYummies] = useState('')
+  const { id } = props.match.params
 
   useEffect(() => {
-    const { id } = props.match.params
-    console.log(id)
-  }, [carb, yummies])
+    let post = posts.filter((post) => post.id === Number(id))[0]
+    setCarb(post.carb)
+    setYummies(post.yummies)
+  }, [])
 
-  // console.log(state)
+  const editPost = (event) => {
+    if (event.target.name === 'carb') {
+      setCarb(event.target.value)
+    }
+    if (event.target.name === 'yummies') {
+      setYummies(event.target.value)
+    }
+  }
 
   return (
     <>
@@ -29,29 +38,29 @@ function EditPost(props) {
         <input
           name='carb'
           value={carb}
-          // onChange={editPost}
+          onChange={editPost}
           maxLength='15'
           style={inputStyle}
         />
         <br />
         <br />
-        {/* 
-          <label>Yummies: </label>
-          <input
-            name='yummies'
-            value={yummies}
-            onChange={editPost}
-            maxLength='100'
-            style={inputStyle}
-          />
 
-          <br />
-          <br />
+        <label>Yummies: </label>
+        <input
+          name='yummies'
+          value={yummies}
+          onChange={editPost}
+          maxLength='100'
+          style={inputStyle}
+        />
 
-          <button style={saveBtn}>
-            {state.post.carb !== '' ? 'Save post' : 'Back to homepage'}
-          </button>
-        </form> */}
+        <br />
+        <br />
+
+        <button style={saveBtn}>
+          {/* {state.post.carb !== '' ? 'Save post' : 'Back to homepage'} */}
+        </button>
+        {/* </form> */}
       </div>
     </>
   )
