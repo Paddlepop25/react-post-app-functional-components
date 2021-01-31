@@ -15,14 +15,15 @@ function StarWarsCharacter() {
         setisLoading(false)
         setstarWarsCharacter(data)
       })
-  }, [isLoading])
+  }, [])
   return (
     <>
       <Header />
       <div style={cardStyle}>
         <BarLoader color='#f00af0' loading={isLoading} css={override} />
-
         {isLoading ? 'Loading...' : null}
+        <br />
+        <br />
         <h3>
           Name: <code style={codeStyle}>{starWarsCharacter.name}</code>
           <br />
@@ -44,13 +45,12 @@ function StarWarsCharacter() {
 const override = css`
   display: block;
   margin: 0 auto;
-  border-color: red;
 `
 
 const cardStyle = {
   // border: '1px dashed red',
   width: '50%',
-  margin: '3rem auto',
+  margin: '1rem auto',
   textAlign: 'center',
 }
 
