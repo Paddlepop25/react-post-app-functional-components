@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-function AddPost() {
+function AddPost(props) {
   const [carb, setCarb] = useState('')
   const [yummies, setYummies] = useState('')
 
@@ -14,6 +14,9 @@ function AddPost() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    props.handleSubmit({ carb, yummies })
+    setCarb('')
+    setYummies('')
   }
 
   return (
