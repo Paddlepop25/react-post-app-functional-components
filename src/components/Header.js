@@ -12,6 +12,10 @@ function Header() {
         <Link to='/photos' style={linkStyle}>
           Photos
         </Link>
+        |
+        <Link to='/count' style={linkStyle}>
+          Count
+        </Link>
       </header>
     </>
   )

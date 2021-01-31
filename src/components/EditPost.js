@@ -5,10 +5,9 @@ import posts from '../postsData.json'
 function EditPost(props) {
   const [carb, setCarb] = useState('')
   const [yummies, setYummies] = useState('')
+  const { id } = props.match.params
 
   useEffect(() => {
-    const { id } = props.match.params
-
     if (id > 3) {
       alert('Please choose RICE, NOODLES or BREAD\nfor the edit page')
     } else {
@@ -16,7 +15,7 @@ function EditPost(props) {
       setCarb(post.carb)
       setYummies(post.yummies)
     }
-  }, [setCarb, setYummies])
+  }, [setCarb, setYummies]) // eslint-disable-next-line react-hooks/exhaustive-deps
 
   const editPost = (event) => {
     if (event.target.name === 'carb') {
