@@ -5,37 +5,37 @@ import Posts from './components/Posts'
 import './App.css'
 
 function App() {
-  const [state, setState] = useState({ posts: [] })
+  const [state, setState] = useState(posts)
 
-  useEffect(() => {
-    const stopLoop = setInterval(() => {
-      setState({ posts: posts }, [])
-    }, 1000)
-    return () => clearInterval(stopLoop)
-  })
+  // useEffect(() => {
+  //   setState({ posts })
+  // }, [state])
 
-  console.log('state >>> ', state)
+  // console.log('state.posts >>> ', state.posts)
+
+  // const postsComponent = state.posts.map((post) => {
+  //   return post
+  //   // return (
+  //   //   <Posts
+  //   //     key={post.id}
+  //   //     id={post.id}
+  //   //     carb={post.carb}
+  //   //     yummies={post.yummies}
+  //   //     delPost={delPost}
+  //   //   />
+  //   // )
+  // })
+  // console.log(postsComponent)
 
   const delPost = (id) => {
     console.log(id)
   }
 
-  // const postsComponent = posts.map((post) => {
-  //   return (
-  //     <Posts
-  //       key={post.id}
-  //       id={post.id}
-  //       carb={post.carb}
-  //       yummies={post.yummies}
-  //       delPost={delPost}
-  //     />
-  //   )
-  // })
   return (
     <>
       <Header />
       <div className='container'>
-        <Posts />
+        <Posts data={state} delPost={delPost} />
       </div>
     </>
   )

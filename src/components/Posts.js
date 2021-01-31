@@ -1,12 +1,21 @@
 function Posts(props) {
+  const posts = props.data
+  // console.log('posts >>> ', posts)
+
   return (
     <>
-      {/* <h4>{props.carb.toUpperCase()}</h4>
-      <span>{props.yummies}</span>
-      <button style={editBtn}>Edit</button>
-      <button style={delBtn} onClick={() => props.delPost(props.id)}>
-        X
-      </button> */}
+      {posts.map((post) => {
+        return (
+          <div key={post.id}>
+            <h4>{post.carb.toUpperCase()}</h4>
+            <span>{post.yummies}</span>
+            <button style={editBtn}>Edit</button>
+            <button style={delBtn} onClick={() => props.delPost(post.id)}>
+              X
+            </button>
+          </div>
+        )
+      })}
     </>
   )
 }
