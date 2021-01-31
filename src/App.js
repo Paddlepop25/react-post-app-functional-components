@@ -28,7 +28,7 @@ function App() {
     }
   }
 
-  const delPost = (id) => {
+  const deletePost = (id) => {
     const filterOutDeletedPost = state.posts.filter((post) => {
       return post.id !== id
     })
@@ -42,7 +42,7 @@ function App() {
       <Header />
       <AddPost handleSubmit={addPost} />
       <div className='container'>
-        <Posts data={state} delPost={delPost} />
+        <Posts data={state} delPost={deletePost} />
       </div>
     </>
   )

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 function Posts(props) {
   const posts = props.data.posts
 
@@ -8,7 +10,9 @@ function Posts(props) {
           <div key={post.id}>
             <h4>{post.carb.toUpperCase()}</h4>
             <span>{post.yummies}</span>
-            <button style={editBtn}>Edit</button>
+            <button style={editBtn}>
+              <Link to={`/editpost/${post.id}`}>Edit</Link>
+            </button>
             <button style={delBtn} onClick={() => props.delPost(post.id)}>
               X
             </button>
