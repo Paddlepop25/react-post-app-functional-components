@@ -5,7 +5,7 @@ import Posts from './components/Posts'
 import './App.css'
 
 function App() {
-  const [state, setState] = useState(posts)
+  const [state, setState] = useState({ posts })
 
   // useEffect(() => {
   //   setState({ posts })
@@ -28,7 +28,12 @@ function App() {
   // console.log(postsComponent)
 
   const delPost = (id) => {
-    console.log(id)
+    const filterOutDeletedPost = state.posts.filter((post) => {
+      return post.id !== id
+    })
+    setState({
+      posts: filterOutDeletedPost,
+    })
   }
 
   return (

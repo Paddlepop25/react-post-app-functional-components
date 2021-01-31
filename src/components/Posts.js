@@ -1,6 +1,7 @@
 function Posts(props) {
-  const posts = props.data
-  // console.log('posts >>> ', posts)
+  // console.log('posts >>> ', props.data.posts)
+  const posts = props.data.posts
+  console.log('posts >>> ', posts)
 
   return (
     <>
