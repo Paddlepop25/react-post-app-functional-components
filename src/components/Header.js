@@ -16,6 +16,10 @@ function Header() {
         <Link to='/count' style={linkStyle}>
           Count
         </Link>
+        |
+        <Link to='/starwarscharacter' style={linkStyle}>
+          Star Wars Character
+        </Link>
       </header>
     </>
   )
